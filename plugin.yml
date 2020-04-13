@@ -9,7 +9,7 @@ inputs:
 
 - name: NODE_IMG_VERSION
   type: string
-  value: "10"
+  value: "12"
   required: false
 
 - name: NPM_CMD
