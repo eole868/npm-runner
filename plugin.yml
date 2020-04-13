@@ -40,4 +40,6 @@ script: |
 
   if [[ -d $NPM_REPORT_PATH ]]; then
     echo $NPM_REPORT_PATH
+    plugindir=${FLOWCI_AGENT_PLUGIN_DIR}/npm-runner
+    python3 ${plugindir}/report.py $NPM_REPORT_PATH index.html
   fi
