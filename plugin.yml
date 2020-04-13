@@ -1,0 +1,32 @@
+name: npm-runner
+version: 1.0.0
+icon: "npm.svg"
+
+inputs:
+- name: FLOWCI_GIT_REPO
+  type: string
+  required: true
+
+- name: NODE_IMG_VERSION
+  type: string
+  value: "10"
+  required: false
+
+- name: NPM_CMD
+  type: string
+  required: true
+
+- name: NPM_REPORT_PATH
+  type: string
+  required: false
+
+docker:
+  image: node:${NODE_IMG_VERSION}
+
+script: |
+  cd $FLOWCI_GIT_REPO
+  npm ${NPM_CMD}
+
+  if [[ -z $NPM_REPORT_PATH ]]; then
+    echo $NPM_REPORT_PATH
+  fi
