@@ -37,6 +37,8 @@ script: |
   fi
 
   cd $FLOWCI_GIT_REPO
+
+  [[ -d $(npm bin) ]] && export PATH=$(npm bin):$PATH
   ${NPM_CMD}
 
   if [[ -z $NPM_REPORT_PATH ]]; then
