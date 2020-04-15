@@ -32,3 +32,7 @@ steps:
 ```
 
 ## Screenshot
+
+### nyc test coverage report
+
+![](https://raw.githubusercontent.com/gy2006/flowci-plugin-npm/master/screenshot/report.png)
