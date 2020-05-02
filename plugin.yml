@@ -25,9 +25,10 @@ script: |
     --userconfig=$FLOWCI_AGENT_WORKSPACE/.cnpmrc "$@"
   }
 
-  cd $FLOWCI_GIT_REPO
-
   [[ -d $(npm bin) ]] && export PATH=$(npm bin):$PATH
+  npm config set cache $FLOWCI_AGENT_WORKSPACE/.npm/.cache --global 
+
+  cd $FLOWCI_GIT_REPO
   ${NPM_CMD}
 
   if [[ -d $NPM_REPORT_PATH ]]; then
