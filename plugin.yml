@@ -17,6 +17,8 @@ inputs:
 
 script: |
   
+  npm config set cache C:\Devel\nodejs\npm-cache --global 
+
   cnpm()
   {
     npm --registry=https://registry.npm.taobao.org \
@@ -25,10 +27,8 @@ script: |
     --userconfig=$FLOWCI_AGENT_WORKSPACE/.cnpmrc "$@"
   }
 
-  [[ -d $(npm bin) ]] && export PATH=$(npm bin):$PATH
-  npm config set cache $FLOWCI_AGENT_WORKSPACE/.npm/.cache --global 
-
   cd $FLOWCI_GIT_REPO
+  [[ -d $(npm bin) ]] && export PATH=$(npm bin):$PATH
   ${NPM_CMD}
 
   if [[ -d $NPM_REPORT_PATH ]]; then
