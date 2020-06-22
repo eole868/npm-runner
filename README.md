@@ -35,4 +35,4 @@ steps:
 
 ### nyc test coverage report
 
-![](https://raw.githubusercontent.com/gy2006/flowci-plugin-npm/master/screenshot/report.png)
+![](https://raw.githubusercontent.com/flowci-plugins/npm-runner/master/screenshot/report.png)
