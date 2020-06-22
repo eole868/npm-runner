@@ -17,7 +17,7 @@ inputs:
 
 script: |
   
-  npm config set cache C:\Devel\nodejs\npm-cache --global 
+  npm config set cache ${FLOWCI_AGENT_WORKSPACE}/npm-cache --global 
 
   cnpm()
   {
