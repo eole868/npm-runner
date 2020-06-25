@@ -3,10 +3,6 @@ version: 1.0.0
 icon: "npm.svg"
 
 inputs:
-- name: FLOWCI_GIT_REPO
-  type: string
-  required: true
-
 - name: NPM_CMD
   type: string
   required: true
