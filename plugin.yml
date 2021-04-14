@@ -25,6 +25,7 @@ script: |
 
   cd $FLOWCI_GIT_REPO
   [[ -d $(npm bin) ]] && export PATH=$(npm bin):$PATH
+  npm install
   ${NPM_CMD}
 
   if [[ -d $NPM_REPORT_PATH ]]; then
